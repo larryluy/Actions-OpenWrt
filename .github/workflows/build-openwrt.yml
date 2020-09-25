@@ -66,6 +66,11 @@ jobs:
         df -hT $PWD
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        
+        #
+        git clone https://github.com/fw876/helloworld
+        mv -f ./helloworld/luci-app-ssr-plus ./lede/package/lean/
+        #
 
     - name: Load custom feeds
       run: |
